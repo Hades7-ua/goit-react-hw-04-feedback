@@ -1,19 +1,20 @@
 import React from 'react';
+import { Button, Title, Container } from './FeedbackOptions.styled';
 
-export function Feedbacks({ options, onLeaveFeedback }) {
+function Feedbacks({ options, onLeaveFeedback }) {
   return (
-    <div>
-      <h1>Please leave feedback</h1>
+    <Container>
+      <Title>Please leave feedback</Title>
       {options.map(option => (
-        <button
+        <Button
           type="button"
           key={option}
           onClick={() => onLeaveFeedback(option)}
         >
           {option}
-        </button>
+        </Button>
       ))}
-    </div>
+    </Container>
   );
 }
 
