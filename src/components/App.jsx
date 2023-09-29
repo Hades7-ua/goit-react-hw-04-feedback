@@ -21,7 +21,7 @@ export class App extends Component {
       <div>
         <Feedbacks
           options={Object.keys(this.state)}
-          handleLeaveFeedback={this.onLeaveFeedback}
+          onLeaveFeedback={this.handleLeaveFeedback}
         />
       </div>
     );
