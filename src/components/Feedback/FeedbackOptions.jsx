@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button, Title, Container } from './FeedbackOptions.styled';
 
 function Feedbacks({ options, onLeaveFeedback }) {
