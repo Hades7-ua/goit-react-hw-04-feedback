@@ -13,7 +13,7 @@ export const StaticSection = styled.div`
   padding: 20px;
   text-align: center;
   margin-top: 20px;
-  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
 `;
 
 export const StatisticItem = styled.p`
