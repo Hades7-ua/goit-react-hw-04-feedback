@@ -10,6 +10,7 @@ export const App = () => {
     neutral: 0,
     bad: 0,
   });
+
   // state = {
   //   good: 0,
   //   neutral: 0,
@@ -18,9 +19,7 @@ export const App = () => {
 
   const handleLeaveFeedback = option => {
     setFeedback(prevState => {
-      return {
-        [option]: prevState[option] + 1,
-      };
+      return { ...prevState, [option]: prevState[option] + 1 };
     });
   };
   const countTotalFeedback = () => {
@@ -33,6 +32,9 @@ export const App = () => {
     return Math.round((good / countTotalFeedback()) * 100);
   };
   const total = countTotalFeedback();
+
+  const { good, neutral, bad } = feedback;
+
   // render() {
   //   const { good, neutral, bad } = this.state;
   //   const total = this.countTotalFeedback();
@@ -41,18 +43,18 @@ export const App = () => {
   return (
     <Container>
       <Feedbacks
-        options={Object.keys(this.state)}
-        onLeaveFeedback={this.handleLeaveFeedback}
+        options={Object.keys(feedback)}
+        onLeaveFeedback={handleLeaveFeedback}
       />
       {total === 0 ? (
         <NotificationMessage>There is no feedback!</NotificationMessage>
       ) : (
         <StatisticsFeedback
-          good={feedback.good}
+          good={good}
           neutral={neutral}
           bad={bad}
           total={total}
-          positiveFeedback={positiveFeedbackPercentage}
+          positiveFeedback={countPositiveFeedbackPercentage()}
         />
       )}
     </Container>
