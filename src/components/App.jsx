@@ -40,7 +40,7 @@ export class App extends Component {
           onLeaveFeedback={this.handleLeaveFeedback}
         />
         {total === 0 ? (
-          <NotificationMessage>There is no feedback</NotificationMessage>
+          <NotificationMessage>There is no feedback!</NotificationMessage>
         ) : (
           <StatisticsFeedback
             good={good}
